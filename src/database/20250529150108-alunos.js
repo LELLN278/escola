@@ -25,11 +25,11 @@ module.exports = {
       allowNull: false,
     },
     peso: {
-      type: Sequelize.STRING,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
     altura: {
-      type: Sequelize.STRING,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
     created_at : {

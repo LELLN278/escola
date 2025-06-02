@@ -1,6 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+require('./src/database');
+
 const express = require('express');
 const homeRoutes = require('./src/routes/homeRoutes');
 
