@@ -45,8 +45,10 @@ const bcryptjs = require('bcryptjs');
     });
 
     this.addHook('beforeSave', async (user) => {
-      user.password_hash = await bcryptjs.hash(user.password, 8);  // pegando a password, fazendo o hash e jogando para a password_hash
-    })
+      if(user.password){
+        user.password_hash = await bcryptjs.hash(user.password, 8);  // pegando a password, fazendo o hash e jogando para a password_hash
+      }
+    });
 
     return this;
 
