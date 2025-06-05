@@ -51,7 +51,10 @@ const bcryptjs = require('bcryptjs');
     });
 
     return this;
+  }
 
+  passwordIsValid(password){
+    return bcryptjs.compare(password, this.password_hash);
   }
 }
 
