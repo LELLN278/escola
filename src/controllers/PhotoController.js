@@ -1,6 +1,18 @@
+const multer = require('multer');
+const multerConfig = require('../config/multer');
+
+const upload = multer(multerConfig).single('photo');
 class PhotoController {
   async store(req, res) {
-    res.json(req.file);
+    return upload(req, res, (err) => {
+      if (err) {
+        return res.status(400).json({
+          errors: [err.code],
+        });
+      }
+
+      return res.json(req.file);
+    });
   }
 }
 
