@@ -68,6 +68,10 @@ const { Sequelize, Model } = require('sequelize');
     return this;
 
   }
+
+  static associate(models) {
+    this.hasMany(models.Photo, { foreignKey: 'aluno_id' })
+  }
 }
 
  module.exports = Aluno;

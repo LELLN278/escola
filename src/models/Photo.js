@@ -1,6 +1,6 @@
 const { Sequelize, Model } = require('sequelize');
 
- class Foto extends Model {
+ class Photo extends Model {
   static init(sequelize) {
     super.init({
       originalname: {
@@ -35,5 +35,5 @@ const { Sequelize, Model } = require('sequelize');
   }
 }
 
- module.exports = Foto;
+ module.exports = Photo;
 
